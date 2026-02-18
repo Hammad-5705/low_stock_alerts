@@ -56,7 +56,6 @@ def check_and_alert_low_stock(item_code, warehouse):
     if not monitored:
         return
 
-    # 🔥 IMPORTANT FIX: Reorder rules exist on LEAF warehouses, not group warehouses
     reorder = _get_reorder_for_leaf(item_code, warehouse)
     if not reorder or not reorder.warehouse_reorder_level:
         return

@@ -1,8 +1,8 @@
 app_name = "low_stock_alerts"
 app_title = "Low Stock Alerts"
-app_publisher = "It should Monitor only specified warehouse(s) against reorder levels already set in each Item, Email alerts sent directly when stock falls below threshold, No purchase orders or material requests created, Zero impact on copacker\'s existing workflows"
+app_publisher = "Muhammad Hammad Nadeem"
 app_description = "Email alerts when stock hits minimum levels in dedicated warehouse(s), without creating purchase orders or interfering with  copacker\'s operations"
-app_email = "tst@gmail.com"
+app_email = "hamadnad2014@gmail.com"
 app_license = "mit"
 
 # Apps
