@@ -132,34 +132,37 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }  
+	"Stock Ledger Entry": {
+        "on_update_after_submit": "low_stock_alerts.api.on_sle_update"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"low_stock_alerts.tasks.all"
-# 	],
-# 	"daily": [
-# 		"low_stock_alerts.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"low_stock_alerts.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"low_stock_alerts.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"low_stock_alerts.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"low_stock_alerts.tasks.all"
+	# ],
+	# "daily": [
+	# 	"low_stock_alerts.tasks.daily"
+	# ],
+	"hourly": [
+        "low_stock_alerts.api.run_low_stock_alerts_fallback"
+    ]
+	# "weekly": [
+	# 	"low_stock_alerts.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"low_stock_alerts.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------
