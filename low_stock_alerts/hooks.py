@@ -138,9 +138,10 @@ doc_events = {
 	# 	"on_cancel": "method",
 	# 	"on_trash": "method"
 	# }  
-	"Stock Ledger Entry": {
-        "on_update_after_submit": "low_stock_alerts.api.on_sle_update"
-    }
+	"Stock Ledger Entry": {  
+        "on_submit": "low_stock_alerts.api.on_sle_update",  
+        "on_update_after_submit": "low_stock_alerts.api.on_sle_update",  
+    }, 
 }
 
 # Scheduled Tasks
@@ -153,8 +154,8 @@ scheduler_events = {
 	# "daily": [
 	# 	"low_stock_alerts.tasks.daily"
 	# ],
-	"hourly": [
-        "low_stock_alerts.api.run_low_stock_alerts_fallback"
+	# "hourly": [
+    #     "low_stock_alerts.api.run_low_stock_alerts_fallback"
     ]
 	# "weekly": [
 	# 	"low_stock_alerts.tasks.weekly"
